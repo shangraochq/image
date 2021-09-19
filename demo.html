@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="font-size: 30px; padding-left: 30px;">做我女朋友好吗？</p>
+    <img style="padding-left: 30px;" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.bkill.com%2Fu%2Fupload%2F2017%2F06%2F19%2F191938277544.gif&refer=http%3A%2F%2Fwww.bkill.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631427285&t=e969f794352251293316374afefb5d6a" />
+    <button id="agree" style="font-size: 20px;">同意</button>
+    <button id="disagree" style="font-size: 20px; margin-left: 30px;">不同意</button>
+</body>
+<script>
+    var argeeButton = document.getElementById('agree');
+    var disargeeButton = document.getElementById('disagree');
+    argeeButton.addEventListener('click', function(e){
+        let p = document.createElement('p');
+        p.innerHTML = '好的，媳妇！';
+        p.style.cssText = 'position: absolute; top: 200px; left: 600px; font-size: 40px'
+        document.body.appendChild(p);
+        document.body.removeChild(argeeButton);
+        document.body.removeChild(disargeeButton);
+    })
+    disargeeButton.addEventListener('click', function(e){
+        var left = ['450px', '510px', '600px', '680px', '750px'];
+        var top = ['100px', '200px', '300px', '400px', '500px'];
+　　　　 var leftIndex = Math.floor((Math.random()*left.length));
+　　　　 var topIndex = Math.floor((Math.random()*top.length));
+        disargeeButton.style.position = 'absolute';
+        disargeeButton.style.top = top[topIndex];
+        disargeeButton.style.left = left[leftIndex];
+    })
+</script>
+</html>
